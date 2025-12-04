@@ -1,5 +1,7 @@
 #include <iostream>
 #include "header.h"
+#include <vector>
+
 
 	// 1. Print the grid where we'll play
 	// 2. Generate random fruits
@@ -11,6 +13,9 @@
 	// 7. Make the snake grow
 	// 8. Add the score
 
+void fruitGenerator();
+
+Coordinates fruit;
 
 void Playground() {
 
@@ -34,8 +39,12 @@ void Playground() {
 			
 		}
 	}
-
-
+	
+	do
+	{
+		FruitGenerator();
+	} while (fruit.rowPosition == 0 || fruit.rowPosition == ROWS - 1 && fruit.columnPosition == 0 || fruit.columnPosition == COLUMNS - 1);
+	playground[fruit.rowPosition][fruit.columnPosition] = 'O';
 
 	for (int i = 0; i < ROWS; i++)
 	{
@@ -46,3 +55,13 @@ void Playground() {
 	}
 
 	}
+
+void FruitGenerator() {
+
+	short rowP = rand() % ROWS - 1;
+	short columnP = rand() % COLUMNS - 1;
+	
+	fruit.rowPosition = rowP;
+	fruit.columnPosition = columnP;
+
+}
