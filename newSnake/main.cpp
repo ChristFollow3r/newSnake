@@ -5,10 +5,11 @@
 
 int main() {
 
+	system("CLS");
 	srand(time(NULL));
 
 	Playground();
 
-	return 0;
+	std::this_thread::sleep_for(std::chrono::milliseconds(FRAMERATE));
 
 }

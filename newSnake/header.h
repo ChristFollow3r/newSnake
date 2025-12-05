@@ -1,6 +1,6 @@
 #pragma once
 
-
+#define FRAMERATE 350
 #define ROWS 21
 #define COLUMNS 41 // Bigger snake means more fun :V
 
