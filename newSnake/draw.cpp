@@ -15,7 +15,6 @@ int maxFruitRowPosition = ROWS - 1;
 int maxFruitColumnPosition = COLUMNS - 1;
 
 
-Coordinates fruit;
 
 void Playground() {
 
@@ -54,10 +53,12 @@ void Playground() {
 
 }
 
+Coordinates fruit;
+
 void FruitGenerator() {
 
-	int maxRowPosition = ROWS - 1;
-	int maxFruitPosition = COLUMNS - 1;
+	int maxRowPosition = ROWS - 2;
+	int maxFruitPosition = COLUMNS - 2;
 
 	int rowP = rand() % maxRowPosition;
 	int columnP = rand() % maxFruitPosition;
@@ -66,9 +67,4 @@ void FruitGenerator() {
 	fruit.columnPosition = columnP + 1;
 
 }
-
-/*do
-{
-	FruitGenerator();
-} while (fruit.rowPosition == 0 || fruit.rowPosition >= maxFruitRowPosition || fruit.columnPosition == 0 || fruit.columnPosition >= maxFruitColumnPosition); */
 

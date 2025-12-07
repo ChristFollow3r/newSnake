@@ -26,6 +26,11 @@ int main() {
 		Playground();
 		SnakeMovement();
 
+		if (snakeBody[0].rowPosition == fruit.rowPosition && snakeBody[0].columnPosition == fruit.columnPosition) {
+			FruitGenerator();
+		}
+
+
 		std::this_thread::sleep_for(std::chrono::milliseconds(FRAMERATE));
 	}
 
