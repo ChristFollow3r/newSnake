@@ -43,7 +43,7 @@ void Playground() {
 	do
 	{
 		FruitGenerator();
-	} while (fruit.rowPosition == 0 || fruit.rowPosition == ROWS - 1 && fruit.columnPosition == 0 || fruit.columnPosition == COLUMNS - 1);
+	} while (fruit.rowPosition == 0 || fruit.rowPosition == ROWS && fruit.columnPosition == 0 || fruit.columnPosition == COLUMNS);
 
 	playground[fruit.rowPosition][fruit.columnPosition] = 'O';
 	playground[initialPosition.rowPosition][initialPosition.columnPosition] = 'X';
