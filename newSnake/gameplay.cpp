@@ -14,7 +14,7 @@ movement snakeMovement;
 void SnakeMovement() {
 	
 	if (Up() == true && snakeMovement != DOWN) snakeMovement = UP; // This gives me a headache. Basically if the bool function returns true (is pressed) and the enum is not DOWN
-	if (Down() == true && snakeMovement != UP) snakeMovement = DOWN; // Wich means Down() is false, then enum is UP, and we do -1 on rows to go up.
+	if (Down() == true && snakeMovement != UP) snakeMovement = DOWN; // Wich means Down() is false, then enum is UP (1), and we do -1 on rows to go up.
 	if (Left() == true && snakeMovement != RIGHT) snakeMovement = LEFT;
 	if (Right() == true && snakeMovement != LEFT) snakeMovement = RIGHT;
 

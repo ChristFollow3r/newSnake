@@ -3,7 +3,6 @@
 #include <vector>
 
 
-	// 4. Add input + movement
 	// 5. Make the snake die when touching the walls
 	// 6. Make the sneak be able to eat fruits
 	// 7. Make the snake grow
@@ -12,15 +11,16 @@
 void FruitGenerator();
 void SnakeGrowth();
 
+int maxFruitRowPosition = ROWS - 1;
+int maxFruitColumnPosition = COLUMNS - 1;
+
+
 Coordinates fruit;
 
 void Playground() {
 
 
 	char playground[ROWS][COLUMNS];
-
-	int maxFruitRowPosition = ROWS - 1;
-	int maxFruitColumnPosition = COLUMNS - 1;
 
 	for (int i = 0; i < ROWS; i++)
 	{
@@ -40,10 +40,6 @@ void Playground() {
 		}
 	}
 
-	do
-	{
-		FruitGenerator();
-	} while (fruit.rowPosition == 0 || fruit.rowPosition >= maxFruitRowPosition || fruit.columnPosition == 0 || fruit.columnPosition >= maxFruitColumnPosition);
 
 	playground[fruit.rowPosition][fruit.columnPosition] = 'O';
 	playground[snakeBody[0].rowPosition][snakeBody[0].columnPosition] = 'X';
@@ -66,7 +62,13 @@ void FruitGenerator() {
 	int rowP = rand() % maxRowPosition;
 	int columnP = rand() % maxFruitPosition;
 	
-	fruit.rowPosition = rowP;
-	fruit.columnPosition = columnP;
+	fruit.rowPosition = rowP + 1;
+	fruit.columnPosition = columnP + 1;
 
 }
+
+/*do
+{
+	FruitGenerator();
+} while (fruit.rowPosition == 0 || fruit.rowPosition >= maxFruitRowPosition || fruit.columnPosition == 0 || fruit.columnPosition >= maxFruitColumnPosition); */
+

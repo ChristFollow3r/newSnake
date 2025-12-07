@@ -13,9 +13,15 @@ int main() {
 	srand(time(NULL));
 	SnakeGrowth();
 	bool playing = true;
+	bool generateFirstFruit = true;
 
 	while (playing)
 	{
+		if (generateFirstFruit == true) {
+			FruitGenerator();
+			generateFirstFruit = false;
+		}
+
 		system("CLS");
 		Playground();
 		SnakeMovement();
