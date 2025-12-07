@@ -28,7 +28,7 @@ int main() {
 		SnakeMovement();
 
 		if (snakeBody[0].rowPosition == fruit.rowPosition && snakeBody[0].columnPosition == fruit.columnPosition) {
-			points += 100;
+			score += 100;
 			FruitGenerator();
 		}
 
@@ -36,13 +36,24 @@ int main() {
 			playing = false;
 		}
 
-		points += 2;
+		score += 2;
 
 		std::this_thread::sleep_for(std::chrono::milliseconds(FRAMERATE));
 	}
 
-	// Function for when you lose
+	system("CLS");
+	std::cout << "Thank you for playing!" << "\n";
+	std::cout << "Your score was: " << score << "\n\n";
+
+	if (score > 200) std::cout << "You did really well!" << "\n\n\n";
+
+	system("PAUSE");
+	system("PAUSE");
+	system("PAUSE");
+	system("PAUSE");
 
 	return 0;
 
 }
+
+

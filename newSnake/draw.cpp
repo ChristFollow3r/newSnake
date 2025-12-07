@@ -12,7 +12,7 @@ void SnakeGrowth();
 
 int maxFruitRowPosition = ROWS - 1;
 int maxFruitColumnPosition = COLUMNS - 1;
-int points = 0;
+int score = 0;
 
 
 void Playground() {
@@ -42,7 +42,7 @@ void Playground() {
 	playground[fruit.rowPosition][fruit.columnPosition] = 'O';
 	playground[snakeBody[0].rowPosition][snakeBody[0].columnPosition] = 'X';
 
-	std::cout << "Score: " << points << "\n" << "\n"; // Extreme lag idk why. Might be my pc lagging for now or I'm doing something the wrong way.
+	std::cout << "Score: " << score << "\n" << "\n"; // Extreme lag idk why. Might be my pc lagging for now or I'm doing something the wrong way.
 
 	for (int i = 0; i < ROWS; i++)
 	{
