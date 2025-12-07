@@ -4,7 +4,6 @@
 
 
 	// 5. Make the snake die when touching the walls
-	// 6. Make the sneak be able to eat fruits
 	// 7. Make the snake grow
 	// 8. Add the score
 
