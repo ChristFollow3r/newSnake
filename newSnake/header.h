@@ -7,6 +7,11 @@
 
 void Playground();
 void FruitGenerator();
+bool Up();
+bool Down();
+bool Left();
+bool Right();
+
 
 struct Coordinates {
 	short rowPosition;
