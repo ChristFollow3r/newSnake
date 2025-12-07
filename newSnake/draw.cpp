@@ -25,6 +25,8 @@ void Playground() {
 	int maxFruitRowPosition = ROWS - 1;
 	int maxFruitColumnPosition = COLUMNS - 1;
 
+	snakeBody.push_back(initialPosition);
+
 	for (int i = 0; i < ROWS; i++)
 	{
 		for (int j = 0; j < COLUMNS; j++)
@@ -49,7 +51,7 @@ void Playground() {
 	} while (fruit.rowPosition == 0 || fruit.rowPosition >= maxFruitRowPosition || fruit.columnPosition == 0 || fruit.columnPosition >= maxFruitColumnPosition);
 
 	playground[fruit.rowPosition][fruit.columnPosition] = 'O';
-	playground[initialPosition.rowPosition][initialPosition.columnPosition] = 'X';
+	playground[snakeBody[0].rowPosition][snakeBody[0].columnPosition] = 'X';
 
 	for (int i = 0; i < ROWS; i++)
 	{
