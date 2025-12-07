@@ -22,6 +22,9 @@ void Playground() {
 
 	char playground[ROWS][COLUMNS];
 
+	int maxFruitRowPosition = ROWS - 2;
+	int maxFruitColumnPosition = COLUMNS - 2;
+
 	for (int i = 0; i < ROWS; i++)
 	{
 		for (int j = 0; j < COLUMNS; j++)
@@ -36,14 +39,14 @@ void Playground() {
 
 
 			else playground[i][j] = ' ';
-			
+
 		}
 	}
-	
+
 	do
 	{
 		FruitGenerator();
-	} while (fruit.rowPosition == 0 || fruit.rowPosition == ROWS && fruit.columnPosition == 0 || fruit.columnPosition == COLUMNS);
+	} while (fruit.rowPosition == 0 || fruit.rowPosition >= maxFruitRowPosition || fruit.columnPosition == 0 || fruit.columnPosition >= maxFruitColumnPosition);
 
 	playground[fruit.rowPosition][fruit.columnPosition] = 'O';
 	playground[initialPosition.rowPosition][initialPosition.columnPosition] = 'X';
@@ -56,12 +59,15 @@ void Playground() {
 		}std::cout << "\n";
 	}
 
-	}
+}
 
 void FruitGenerator() {
 
-	short rowP = rand() % ROWS - 1;
-	short columnP = rand() % COLUMNS - 1;
+	int maxRowPosition = ROWS - 2;
+	int maxFruitPosition = COLUMNS - 2;
+
+	int rowP = rand() % maxRowPosition;
+	int columnP = rand() % maxFruitPosition;
 	
 	fruit.rowPosition = rowP;
 	fruit.columnPosition = columnP;
