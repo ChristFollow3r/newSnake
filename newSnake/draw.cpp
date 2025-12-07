@@ -3,8 +3,6 @@
 #include <vector>
 
 
-	// 3. Create the snake
-	// 3.5 Add the system cls and the refresh rate or whatever its called
 	// 4. Add input + movement
 	// 5. Make the snake die when touching the walls
 	// 6. Make the sneak be able to eat fruits

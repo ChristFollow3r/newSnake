@@ -10,15 +10,15 @@
 
 int main() {
 
+	srand(time(NULL));
 	SnakeGrowth();
 	bool playing = true;
 
 	while (playing)
 	{
 		system("CLS");
-		srand(time(NULL));
-
 		Playground();
+		SnakeMovement();
 
 		std::this_thread::sleep_for(std::chrono::milliseconds(FRAMERATE));
 	}

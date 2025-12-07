@@ -8,6 +8,8 @@
 void Playground();
 void FruitGenerator();
 void SnakeGrowth();
+void SnakeMovement();
+
 bool Up();
 bool Down();
 bool Left();

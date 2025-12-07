@@ -12,6 +12,13 @@ enum movement {
 movement snakeMovement;
 
 void SnakeMovement() {
+	
+	if (Up() == true && snakeMovement != DOWN) snakeMovement = UP;
+	if (Down() == true && snakeMovement != UP) snakeMovement = DOWN;
+	if (Left() == true && snakeMovement != RIGHT) snakeMovement = LEFT;
+	if (Right() == true && snakeMovement != LEFT) snakeMovement = RIGHT;
+
+
 
 	switch (snakeMovement) {
 
@@ -19,19 +26,19 @@ void SnakeMovement() {
 		break;
 
 	case UP:
-		Up();
+		snakeBody[0].rowPosition -= 1;
 		break;
 	
 	case DOWN:
-		Down();
+		snakeBody[0].rowPosition += 1;
 		break;
 
 	case LEFT:
-		Left();
+		snakeBody[0].columnPosition -= 1;
 		break;
 
 	case RIGHT:
-		Right();
+		snakeBody[0].columnPosition += 1;
 		break;
 
 
