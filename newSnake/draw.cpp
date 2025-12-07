@@ -25,7 +25,7 @@ void Playground() {
 	int maxFruitRowPosition = ROWS - 1;
 	int maxFruitColumnPosition = COLUMNS - 1;
 
-	snakeBody.push_back(initialPosition);
+	snakeBody.push_back(initialPosition); // This is very problematic
 
 	for (int i = 0; i < ROWS; i++)
 	{
@@ -74,10 +74,4 @@ void FruitGenerator() {
 	fruit.rowPosition = rowP;
 	fruit.columnPosition = columnP;
 
-}
-
-
-void SnakeCreation() {
-
-	snakeBody.push_back(initialPosition);
 }

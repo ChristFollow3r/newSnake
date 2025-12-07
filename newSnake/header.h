@@ -1,5 +1,5 @@
 #pragma once
-
+#include <vector>
 
 
 #define ROWS 21
@@ -12,8 +12,9 @@ bool Down();
 bool Left();
 bool Right();
 
-
 struct Coordinates {
-	short rowPosition;
-	short columnPosition;
+	int rowPosition;
+	int columnPosition;
 };
+
+extern std::vector<Coordinates> snakeBody;
