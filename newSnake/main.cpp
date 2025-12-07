@@ -5,7 +5,7 @@
 #include <thread>
 #include <chrono>
 
-#define FRAMERATE 350
+#define FRAMERATE 150
 
 
 int main() {
@@ -27,9 +27,11 @@ int main() {
 		SnakeMovement();
 
 		if (snakeBody[0].rowPosition == fruit.rowPosition && snakeBody[0].columnPosition == fruit.columnPosition) {
+			points += 100;
 			FruitGenerator();
 		}
 
+		points += 2;
 
 		std::this_thread::sleep_for(std::chrono::milliseconds(FRAMERATE));
 	}

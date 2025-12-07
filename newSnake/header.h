@@ -22,3 +22,5 @@ struct Coordinates {
 
 extern std::vector<Coordinates> snakeBody;
 extern Coordinates fruit;
+
+extern int points;
