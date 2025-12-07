@@ -22,8 +22,8 @@ void Playground() {
 
 	char playground[ROWS][COLUMNS];
 
-	int maxFruitRowPosition = ROWS - 2;
-	int maxFruitColumnPosition = COLUMNS - 2;
+	int maxFruitRowPosition = ROWS - 1;
+	int maxFruitColumnPosition = COLUMNS - 1;
 
 	for (int i = 0; i < ROWS; i++)
 	{
@@ -63,8 +63,8 @@ void Playground() {
 
 void FruitGenerator() {
 
-	int maxRowPosition = ROWS - 2;
-	int maxFruitPosition = COLUMNS - 2;
+	int maxRowPosition = ROWS - 1;
+	int maxFruitPosition = COLUMNS - 1;
 
 	int rowP = rand() % maxRowPosition;
 	int columnP = rand() % maxFruitPosition;
