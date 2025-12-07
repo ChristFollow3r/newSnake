@@ -10,6 +10,7 @@
 
 int main() {
 
+	SnakeGrowth();
 	bool playing = true;
 
 	while (playing)

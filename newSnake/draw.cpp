@@ -12,6 +12,7 @@
 	// 8. Add the score
 
 void FruitGenerator();
+void SnakeGrowth();
 
 Coordinates fruit;
 Coordinates initialPosition{ (ROWS) / 2, (COLUMNS) / 2 };
@@ -24,8 +25,6 @@ void Playground() {
 
 	int maxFruitRowPosition = ROWS - 1;
 	int maxFruitColumnPosition = COLUMNS - 1;
-
-	snakeBody.push_back(initialPosition); // This is very problematic
 
 	for (int i = 0; i < ROWS; i++)
 	{
@@ -73,5 +72,11 @@ void FruitGenerator() {
 	
 	fruit.rowPosition = rowP;
 	fruit.columnPosition = columnP;
+
+}
+
+void SnakeGrowth() {
+
+	snakeBody.push_back(initialPosition); // This is very problematic
 
 }
