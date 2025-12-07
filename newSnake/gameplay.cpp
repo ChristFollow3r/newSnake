@@ -38,6 +38,14 @@ void SnakeMovement() {
 	}
 
 
+}
 
+Coordinates initialPosition{ (ROWS) / 2, (COLUMNS) / 2 };
+std::vector<Coordinates> snakeBody;
+
+
+void SnakeGrowth() {
+
+	snakeBody.push_back(initialPosition);
 
 }

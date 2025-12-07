@@ -15,8 +15,6 @@ void FruitGenerator();
 void SnakeGrowth();
 
 Coordinates fruit;
-Coordinates initialPosition{ (ROWS) / 2, (COLUMNS) / 2 };
-std::vector<Coordinates> snakeBody;
 
 void Playground() {
 
@@ -72,11 +70,5 @@ void FruitGenerator() {
 	
 	fruit.rowPosition = rowP;
 	fruit.columnPosition = columnP;
-
-}
-
-void SnakeGrowth() {
-
-	snakeBody.push_back(initialPosition); // This is very problematic
 
 }
