@@ -19,8 +19,8 @@ void SnakeMovement() {
 	if (Left() == true && snakeMovement != RIGHT) snakeMovement = LEFT;
 	if (Right() == true && snakeMovement != LEFT) snakeMovement = RIGHT;
 	
-	for (int i = snakeBody.size() - 1; i > 0; i--) {
-		snakeBody[i] = snakeBody[i - 1];
+	for (int i = snakeBody.size() - 1; i > 0; i--) {  // If the snake vector size is bigger than 0 (where the initial position is), the next vector position has the values of the
+		snakeBody[i] = snakeBody[i - 1];			  // last position (this was gives the impresion that the snake parts are follwing the head.
 	}
 
 	switch (snakeMovement) {
@@ -50,7 +50,7 @@ void SnakeMovement() {
 	if (snakeBody[0].rowPosition == fruit.rowPosition && snakeBody[0].columnPosition == fruit.columnPosition) {
 		score += 100;
 		FruitGenerator();
-		snakegrowth();
+		snakegrowth(); // Call this function once the head eats an apple
 	}
 
 }
@@ -59,13 +59,13 @@ Coordinates initialPosition{ (ROWS) / 2, (COLUMNS) / 2 };
 std::vector<Coordinates> snakeBody;
 
 
-void SnakeStart() {
+void SnakeStart() { // To start the game I need to call this once
 
 	snakeBody.push_back(initialPosition);
 
 }
 
-void snakegrowth() {
+void snakegrowth() { // Pushes to the snake vector the last struct
 
 	Coordinates part = snakeBody.back();
 	snakeBody.push_back(part);
