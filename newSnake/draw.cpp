@@ -45,7 +45,7 @@ void Playground() {
 		playground[snakeBody[i].rowPosition][snakeBody[i].columnPosition] = 'X';
 	}
 
-	std::cout << "Score: " << score << "\n" << "\n"; // Extreme lag idk why. Might be my pc lagging for now or I'm doing something the wrong way.
+	std::cout << "Score: " << score << "\n" << "\n"; 
 
 	for (int i = 0; i < ROWS; i++)
 	{

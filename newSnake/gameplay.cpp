@@ -17,7 +17,10 @@ void SnakeMovement() {
 	if (Down() == true && snakeMovement != UP) snakeMovement = DOWN; // Wich means Down() is false, then enum is UP (1), and we do -1 on rows to go up.
 	if (Left() == true && snakeMovement != RIGHT) snakeMovement = LEFT;
 	if (Right() == true && snakeMovement != LEFT) snakeMovement = RIGHT;
-
+	
+	for (int i = 1; i < snakeBody.size(); i++) {
+		snakeBody.push_back({ snakeBody[0].rowPosition, snakeBody[0].columnPosition });
+	}
 
 	switch (snakeMovement) {
 

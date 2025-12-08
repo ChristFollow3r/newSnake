@@ -31,7 +31,6 @@ int main() {
 		if (snakeBody[0].rowPosition == fruit.rowPosition && snakeBody[0].columnPosition == fruit.columnPosition) {
 			score += 100;
 			FruitGenerator();
-			snakeBody.push_back({ snakeBody[0].rowPosition, snakeBody[0].columnPosition });
 		}
 
 		if (snakeBody[0].rowPosition == 0 || snakeBody[0].rowPosition == ROWS - 1 || snakeBody[0].columnPosition == 0 || snakeBody[0].columnPosition == COLUMNS - 1) playing = false;
