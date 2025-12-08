@@ -7,7 +7,7 @@
 
 void Playground();
 void FruitGenerator();
-void SnakeGrowth();
+void SnakeStart();
 void SnakeMovement();
 
 bool Up();

@@ -8,7 +8,6 @@
 	// 8. Add the score
 
 void FruitGenerator();
-void SnakeGrowth();
 
 int maxFruitRowPosition = ROWS - 1;
 int maxFruitColumnPosition = COLUMNS - 1;
@@ -40,7 +39,11 @@ void Playground() {
 
 
 	playground[fruit.rowPosition][fruit.columnPosition] = 'O';
-	playground[snakeBody[0].rowPosition][snakeBody[0].columnPosition] = 'X';
+
+	for (int i = 0; i < snakeBody.size(); i++)
+	{
+		playground[snakeBody[i].rowPosition][snakeBody[i].columnPosition] = 'X';
+	}
 
 	std::cout << "Score: " << score << "\n" << "\n"; // Extreme lag idk why. Might be my pc lagging for now or I'm doing something the wrong way.
 

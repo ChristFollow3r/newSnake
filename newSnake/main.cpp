@@ -12,7 +12,7 @@
 int main() {
 
 	srand(time(NULL));
-	SnakeGrowth();
+	SnakeStart();
 	bool playing = true;
 	bool generateFirstFruit = true;
 
@@ -27,14 +27,14 @@ int main() {
 		Playground();
 		SnakeMovement();
 
+
 		if (snakeBody[0].rowPosition == fruit.rowPosition && snakeBody[0].columnPosition == fruit.columnPosition) {
 			score += 100;
 			FruitGenerator();
+			snakeBody.push_back({ snakeBody[0].rowPosition, snakeBody[0].columnPosition });
 		}
 
-		if (snakeBody[0].rowPosition == 0 || snakeBody[0].rowPosition == ROWS - 1 || snakeBody[0].columnPosition == 0 || snakeBody[0].columnPosition == COLUMNS - 1) {
-			playing = false;
-		}
+		if (snakeBody[0].rowPosition == 0 || snakeBody[0].rowPosition == ROWS - 1 || snakeBody[0].columnPosition == 0 || snakeBody[0].columnPosition == COLUMNS - 1) playing = false;
 
 		score += 2;
 
@@ -45,9 +45,9 @@ int main() {
 	std::cout << "Thank you for playing!" << "\n";
 	std::cout << "Your score was: " << score << "\n\n";
 
-	if (score > 200) std::cout << "You did really well!" << "\n\n\n";
+	if (score > 2000) std::cout << "You did really well!" << "\n\n\n";
 
-	system("PAUSE");
+	system("PAUSE"); //There's a very good reason for having so many pauses
 	system("PAUSE");
 	system("PAUSE");
 	system("PAUSE");

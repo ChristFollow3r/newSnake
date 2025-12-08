@@ -19,7 +19,6 @@ void SnakeMovement() {
 	if (Right() == true && snakeMovement != LEFT) snakeMovement = RIGHT;
 
 
-
 	switch (snakeMovement) {
 
 	case STOP:
@@ -51,8 +50,9 @@ Coordinates initialPosition{ (ROWS) / 2, (COLUMNS) / 2 };
 std::vector<Coordinates> snakeBody;
 
 
-void SnakeGrowth() {
+void SnakeStart() {
 
 	snakeBody.push_back(initialPosition);
 
 }
+
