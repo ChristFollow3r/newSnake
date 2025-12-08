@@ -13,12 +13,12 @@ enum movement {
 movement snakeMovement;
 
 void SnakeMovement() {
-	
+
 	if (Up() == true && snakeMovement != DOWN) snakeMovement = UP; // This gives me a headache. Basically if the bool function returns true (is pressed) and the enum is not DOWN
 	if (Down() == true && snakeMovement != UP) snakeMovement = DOWN; // Wich means Down() is false, then enum is UP (1), and we do -1 on rows to go up.
 	if (Left() == true && snakeMovement != RIGHT) snakeMovement = LEFT;
 	if (Right() == true && snakeMovement != LEFT) snakeMovement = RIGHT;
-	
+
 	for (int i = snakeBody.size() - 1; i > 0; i--) {  // If the snake vector size is bigger than 0 (where the initial position is), the next vector position has the values of the
 		snakeBody[i] = snakeBody[i - 1];			  // last position (this was gives the impresion that the snake parts are follwing the head.
 	}
@@ -31,7 +31,7 @@ void SnakeMovement() {
 	case UP:
 		snakeBody[0].rowPosition -= 1;
 		break;
-	
+
 	case DOWN:
 		snakeBody[0].rowPosition += 1;
 		break;
@@ -49,7 +49,15 @@ void SnakeMovement() {
 
 	if (snakeBody[0].rowPosition == fruit.rowPosition && snakeBody[0].columnPosition == fruit.columnPosition) {
 		score += 100;
-		FruitGenerator();
+
+		for (int i = snakeBody.size() - 1; i > 0; i--) { // I think this is overkill and it won't work properly
+
+			do {
+				FruitGenerator();
+			} while (fruit.rowPosition == snakeBody[i].rowPosition && fruit.columnPosition == snakeBody[i].columnPosition);
+		}
+		
+
 		snakegrowth(); // Call this function once the head eats an apple
 	}
 

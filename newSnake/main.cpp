@@ -27,10 +27,12 @@ int main() {
 		Playground();
 		SnakeMovement();
 
+		//Im not making a function no handle death, I dont think it's worth it.
 		if (snakeBody[0].rowPosition == 0 || snakeBody[0].rowPosition == ROWS - 1 || snakeBody[0].columnPosition == 0 || snakeBody[0].columnPosition == COLUMNS - 1) playing = false;
+
 		for (int i = snakeBody.size() - 2; i > 0; i--) {
-			if (snakeBody[0].rowPosition == snakeBody[i].rowPosition && snakeBody[0].columnPosition == snakeBody[i].columnPosition) playing = false; // This will insta kill the player when it eats a fruit
-		}
+			if (snakeBody[0].rowPosition == snakeBody[i].rowPosition && snakeBody[0].columnPosition == snakeBody[i].columnPosition) playing = false; // I think this is working now.
+		} // im checking after two positions because the snake could never kill itself only with a head and a body part, and i think its working but im too bad at the game to be sure about it.
 		score += 2;
 
 		std::this_thread::sleep_for(std::chrono::milliseconds(FRAMERATE));

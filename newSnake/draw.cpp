@@ -2,11 +2,6 @@
 #include "header.h"
 #include <vector>
 
-
-	// 5. Make the snake die when touching the walls
-	// 7. Make the snake grow
-	// 8. Add the score
-
 void FruitGenerator();
 
 int maxFruitRowPosition = ROWS - 1;
@@ -61,6 +56,7 @@ Coordinates fruit;
 
 void FruitGenerator() {
 
+	// I need to make it so that the fruits cant spawn anywhere where the snake head/body is.
 	int maxRowPosition = ROWS - 2;
 	int maxFruitPosition = COLUMNS - 2;
 
