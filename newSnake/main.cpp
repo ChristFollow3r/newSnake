@@ -6,7 +6,7 @@
 #include <chrono>
 #include <iostream>;
 
-#define FRAMERATE 150
+#define FRAMERATE 100
 
 
 int main() {
@@ -28,7 +28,9 @@ int main() {
 		SnakeMovement();
 
 		if (snakeBody[0].rowPosition == 0 || snakeBody[0].rowPosition == ROWS - 1 || snakeBody[0].columnPosition == 0 || snakeBody[0].columnPosition == COLUMNS - 1) playing = false;
-
+		for (int i = snakeBody.size() - 2; i > 0; i--) {
+			if (snakeBody[0].rowPosition == snakeBody[i].rowPosition && snakeBody[0].columnPosition == snakeBody[i].columnPosition) playing = false; // This will insta kill the player when it eats a fruit
+		}
 		score += 2;
 
 		std::this_thread::sleep_for(std::chrono::milliseconds(FRAMERATE));
@@ -41,8 +43,8 @@ int main() {
 	if (score > 2000) std::cout << "You did really well!" << "\n\n\n";
 
 	system("PAUSE"); //There's a very good reason for having so many pauses
-	system("PAUSE");
-	system("PAUSE");
+	system("PAUSE"); //If the game ends and the player keeps on pressing the WASD keys, then the program will finish, and he won't have time to see the ending message.
+	system("PAUSE"); // The most obvius solution to me is to spam PAUSE.
 	system("PAUSE");
 
 	return 0;
