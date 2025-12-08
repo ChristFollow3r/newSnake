@@ -47,18 +47,13 @@ void SnakeMovement() {
 
 	}
 
-	if (snakeBody[0].rowPosition == fruit.rowPosition && snakeBody[0].columnPosition == fruit.columnPosition) {
+
+	if (snakeBody[0].rowPosition == fruit.rowPosition && snakeBody[0].columnPosition == fruit.columnPosition) { // I need to make the fruit not spawn at any snake position.
+		
 		score += 100;
 
-		for (int i = snakeBody.size() - 1; i > 0; i--) { // I think this is overkill and it won't work properly
-
-			do {
-				FruitGenerator();
-			} while (fruit.rowPosition == snakeBody[i].rowPosition && fruit.columnPosition == snakeBody[i].columnPosition);
-		}
-		
-
-		snakegrowth(); // Call this function once the head eats an apple
+		FruitGenerator();
+		snakegrowth();
 	}
 
 }
@@ -78,4 +73,3 @@ void snakegrowth() { // Pushes to the snake vector the last struct
 	Coordinates part = snakeBody.back();
 	snakeBody.push_back(part);
 }
-
