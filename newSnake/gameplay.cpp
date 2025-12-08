@@ -1,6 +1,7 @@
 #include "header.h"
 #include <iostream>
 
+
 enum movement {
 	STOP,
 	UP,
@@ -18,8 +19,8 @@ void SnakeMovement() {
 	if (Left() == true && snakeMovement != RIGHT) snakeMovement = LEFT;
 	if (Right() == true && snakeMovement != LEFT) snakeMovement = RIGHT;
 	
-	for (int i = 1; i < snakeBody.size(); i++) {
-		snakeBody.push_back({ snakeBody[0].rowPosition, snakeBody[0].columnPosition });
+	for (int i = snakeBody.size() - 1; i > 0; i--) {
+		snakeBody[i] = snakeBody[i - 1];
 	}
 
 	switch (snakeMovement) {
@@ -46,6 +47,11 @@ void SnakeMovement() {
 
 	}
 
+	if (snakeBody[0].rowPosition == fruit.rowPosition && snakeBody[0].columnPosition == fruit.columnPosition) {
+		score += 100;
+		FruitGenerator();
+		snakegrowth();
+	}
 
 }
 
@@ -57,5 +63,11 @@ void SnakeStart() {
 
 	snakeBody.push_back(initialPosition);
 
+}
+
+void snakegrowth() {
+
+	Coordinates part = snakeBody.back();
+	snakeBody.push_back(part);
 }
 

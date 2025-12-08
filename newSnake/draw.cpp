@@ -40,7 +40,7 @@ void Playground() {
 
 	playground[fruit.rowPosition][fruit.columnPosition] = 'O';
 
-	for (int i = 0; i < snakeBody.size(); i++)
+	for (int i = 0; i < snakeBody.size(); i++) // This is kinda shit
 	{
 		playground[snakeBody[i].rowPosition][snakeBody[i].columnPosition] = 'X';
 	}
