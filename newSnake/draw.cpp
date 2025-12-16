@@ -9,7 +9,7 @@ int maxFruitColumnPosition = COLUMNS - 1;
 int score = 0;
 
 
-void Playground() {
+void Playground() { // You'll ask your self. Where are the parameters. How's thiss even possible. - EXTERNS - :)
 
 
 	char playground[ROWS][COLUMNS];
@@ -35,7 +35,7 @@ void Playground() {
 
 	playground[fruit.rowPosition][fruit.columnPosition] = 'O';
 
-	for (int i = 0; i < snakeBody.size(); i++) // This is kinda shit
+	for (int i = 0; i < snakeBody.size(); i++) 
 	{
 		playground[snakeBody[i].rowPosition][snakeBody[i].columnPosition] = 'X';
 	}
@@ -56,7 +56,8 @@ Coordinates fruit;
 
 void FruitGenerator() {
 
-	// I need to make it so that the fruits cant spawn anywhere where the snake head/body is.
+	// Known bug that now is a feature. Fruits can spawn at any body position, the snake trembles as a juicy ghostly entity roams freely in his body for a brief period of time.
+
 	int maxRowPosition = ROWS - 2;
 	int maxFruitPosition = COLUMNS - 2;
 

@@ -15,8 +15,8 @@ movement snakeMovement;
 void SnakeMovement() {
 
 	if (Up() == true && snakeMovement != DOWN) snakeMovement = UP; // This gives me a headache. Basically if the bool function returns true (is pressed) and the enum is not DOWN
-	if (Down() == true && snakeMovement != UP) snakeMovement = DOWN; // Wich means Down() is false, then enum is UP (1), and we do -1 on rows to go up.
-	if (Left() == true && snakeMovement != RIGHT) snakeMovement = LEFT;
+	if (Down() == true && snakeMovement != UP) snakeMovement = DOWN; // Wich means Down() is false, then enum is UP (1), and we do -1 on rows to go up. This is super important!
+	if (Left() == true && snakeMovement != RIGHT) snakeMovement = LEFT; // This way player can't cancel movement (ex if he's going left he won't be able to go right, unles he turns up or down).
 	if (Right() == true && snakeMovement != LEFT) snakeMovement = RIGHT;
 
 	for (int i = snakeBody.size() - 1; i > 0; i--) {  // If the snake vector size is bigger than 0 (where the initial position is), the next vector position has the values of the
@@ -29,11 +29,11 @@ void SnakeMovement() {
 		break;
 
 	case UP:
-		snakeBody[0].rowPosition -= 1;
+		snakeBody[0].rowPosition -= 1; // To go up we need to subtract.
 		break;
 
 	case DOWN:
-		snakeBody[0].rowPosition += 1;
+		snakeBody[0].rowPosition += 1; // To go up we add.
 		break;
 
 	case LEFT:
@@ -50,10 +50,10 @@ void SnakeMovement() {
 
 	if (snakeBody[0].rowPosition == fruit.rowPosition && snakeBody[0].columnPosition == fruit.columnPosition) { 
 		
-		score += snakeBody.size();
+		FruitGenerator(); // Generates a new fruit
+		snakegrowth(); // The snake grows
 
-		FruitGenerator();
-		snakegrowth();
+		score += snakeBody.size(); // The score (plus 2 because I want to add 2 points on every frame) plus equals the snake body size
 	}
 
 }
