@@ -50,7 +50,7 @@ void SnakeMovement() {
 
 	if (snakeBody[0].rowPosition == fruit.rowPosition && snakeBody[0].columnPosition == fruit.columnPosition) { // I need to make the fruit not spawn at any snake position.
 		
-		score += 100;
+		score += snakeBody.size();
 
 		FruitGenerator();
 		snakegrowth();

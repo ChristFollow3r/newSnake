@@ -33,7 +33,6 @@ int main() {
 		for (int i = snakeBody.size() - 2; i > 0; i--) {
 			if (snakeBody[0].rowPosition == snakeBody[i].rowPosition && snakeBody[0].columnPosition == snakeBody[i].columnPosition) playing = false; // I think this is working now.
 		} // im checking after two positions because the snake could never kill itself only with a head and a body part (maybe even 3 parts), and i think its working but im too bad at the game to be sure about it.
-		score += 2;
 
 		std::this_thread::sleep_for(std::chrono::milliseconds(FRAMERATE));
 	}
