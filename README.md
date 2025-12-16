@@ -9,3 +9,8 @@ Hi ha una part del codi que l'he consultat d'aquest primer repositori que vaig f
 També he de dir que quan vaig fer el snake (perque porto un parell de semanes sense tocarlo), no tenia ni idea de com utilitzar paràmetres amb les funcions, així que el codi esta ple de externs. Segurament hauria estat millor apendre a fer servir paràmetres en el seu moment, pero no hay mal que por bien no venga. Ara se utlitzar els 2 :).
 
 Qualsevol cosa em dius. Bon Nadal!
+
+
+Repositori d'aquest projecte: https://github.com/ChristFollow3r/newSnake.git
+
+Repositori del primer snake: https://github.com/ChristFollow3r/Snake.git
