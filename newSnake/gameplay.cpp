@@ -19,8 +19,10 @@ void SnakeMovement() {
 	if (Left() == true && snakeMovement != RIGHT) snakeMovement = LEFT; // This way player can't cancel movement (ex if he's going left he won't be able to go right, unles he turns up or down).
 	if (Right() == true && snakeMovement != LEFT) snakeMovement = RIGHT;
 
+	// I talk about this part of the code in the readme.
+
 	for (int i = snakeBody.size() - 1; i > 0; i--) {  // If the snake vector size is bigger than 0 (where the initial position is), the next vector position has the values of the
-		snakeBody[i] = snakeBody[i - 1];			  // last position (this was gives the impresion that the snake parts are follwing the head.
+		snakeBody[i] = snakeBody[i - 1];			  // last position (this is what gives the impresion of the snake parts follwing the head.
 	}
 
 	switch (snakeMovement) {
