@@ -2,14 +2,14 @@
 #include "header.h"
 #include <vector>
 
-void FruitGenerator();
+void FruitGenerator(); // I like to write my functions from bottom to top and decleare them at the top.
 
 int maxFruitRowPosition = ROWS - 1;
 int maxFruitColumnPosition = COLUMNS - 1;
 int score = 0;
 
 
-void Playground() { // You'll ask your self. Where are the parameters. How's thiss even possible. - EXTERNS - :)
+void Playground() { // You'll ask your self. Where are the parameters. How's this even possible. - EXTERNS - :)
 
 
 	char playground[ROWS][COLUMNS];

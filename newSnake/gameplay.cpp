@@ -70,6 +70,6 @@ void SnakeStart() { // To start the game I need to call this once
 
 void snakegrowth() { // Pushes to the snake vector the last struct
 
-	Coordinates part = snakeBody.back();
+	Coordinates part = snakeBody.back(); 
 	snakeBody.push_back(part);
 }
